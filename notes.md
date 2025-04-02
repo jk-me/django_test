@@ -46,3 +46,7 @@
   - create `q **=** Question(question_text**=**"What's new?", pub_date**=**timezone**.**now())` and then q.save(). or use Question.objects.create()
   - QuerySet documentation
     - [QuerySet Documentation | Field Lookups](https://docs.djangoproject.com/en/5.2/ref/models/querysets/#field-lookups) - double underscore methods that can be chained onto a field to get more specific data (year of date) or comparisons (greater than, contains)
+
+## Admin User
+
+- `python manage.py createsuperuser`prompts to create login w email
