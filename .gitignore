@@ -1,0 +1,55 @@
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore environment variables and virtual environments
+.env
+*.env
+venv/
+.envrc
+.venv/
+pip-log.txt
+
+# Ignore Django database files
+db.sqlite3
+db.sqlite3-journal
+
+# Ignore Django migration cache files
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+
+# # Ignore IDE/editor-specific files
+# .vscode/
+# .idea/
+# *.swp
+# *.swo
+
+# # Ignore media/uploads (if using local file storage)
+# media/
+# uploads/
+
+# # Ignore logs and debug files
+# *.log
+# logs/
+# debug.log
+
+# # Ignore coverage and test reports
+# htmlcov/
+# .coverage
+# *.cover
+# .tox/
+# .nox/
+# pytest_cache/
+
+# # Ignore compiled static files (if collected locally)
+# staticfiles/
+# static/
+
+# # Ignore deployment files (optional)
+# *.pem
+# *.crt
+# *.key
+# .DS_Store

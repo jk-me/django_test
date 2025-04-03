@@ -4,7 +4,6 @@
 - To see django version
   - `pip show django` (or pip3)
   - or `python -m django --version`
-    - -m flag is to run module as a script
 - Activate venv before starting up a session https://docs.python.org/3/tutorial/venv.html
   - `source ~/.virtualenvs/djangodev/bin/activate`
   - To create a venv:
