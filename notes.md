@@ -49,3 +49,8 @@
 ## Admin User
 
 - `python manage.py createsuperuser`prompts to create login w email
+
+## Pt 3
+
+- ROOT_URL_CONF in settings points to available urls file with available urlpatterns
+- TEMPLATES in settings describes how django loads them, by default it looks for templates/ in each INSTALLED_APPS
