@@ -53,7 +53,9 @@
 ## Pt 3 - Views and templates
 
 - ROOT_URL_CONF in settings points to urls.py file with available urlpatterns
-- TEMPLATES in settings describes how django loads them, by default it looks for templates/ in each INSTALLED_APPS
+- TEMPLATES in settings describes how django loads them, by default it looks for templates/ in each INSTALLED_APPS directory. In this case it only searches inside templates/ folders and does not use full paths, so namespacing is helpful.
 - Templates
   - [Django Docs | Template Guide](https://docs.djangoproject.com/en/5.1/topics/templates/)
   - [Django Docs | Built in template helpers](https://docs.djangoproject.com/en/5.1/ref/templates/builtins/#std-templatetag-for)
+    - `extends` from a base template
+    - `include` a partial
