@@ -17,11 +17,11 @@
 - `python3 manage.py runserver`
 
 - auto refresh except for adding files, check runserver ref for running on other ports
-- Django has sqlite built in, to add other db https://docs.djangoproject.com/en/5.1/topics/install/#get-your-database-running
+- Django has sqlite built in, [to add other db](https://docs.djangoproject.com/en/5.1/topics/install/#get-your-database-running)
 
 ## Migrations and Models
 
-- `python3 manage.py migrate`
+- `python3 manage.py migrate` to migrate
 - initial migrations on setup refer to INSTALLED_APPS in **mysite/settings.py**
 - Creating a model
   - myapp/models.py - add model definitions here
@@ -29,7 +29,7 @@
     - in INSTALLED_APPS in myproject/settings.py file, add `polls.apps.PollsConfig` - class is defined in myapp/apps.py
   - `python3 manage.py makemigrations polls` - detects changes in models and creates migration file
   - `python manage.py sqlmigrate polls 0001` - prints sql in terminal that will be run for that migration number
-  - [\*\*`python manage.py check`](https://docs.djangoproject.com/en/5.1/ref/django-admin/#django-admin-check)\*\* https://docs.djangoproject.com/en/5.1/ref/django-admin/#django-admin-check (Checks for errors w/o touching db or migrations)
+  - [python manage.py check](https://docs.djangoproject.com/en/5.1/ref/django-admin/#django-admin-check) (System check for errors in entire project w/o touching db or migrations)
 - Model defaults
   - default ids are integers and auto created, need to set up separately as uuid and primary key or have another field
   - fields are not null by default. set null=True in definition for otherwise
@@ -39,22 +39,21 @@
 - [Tutorial pt 2 - playing with the API](https://docs.djangoproject.com/en/5.1/intro/tutorial02/#playing-with-the-api)
 - `python3 manage.py shell`
 - manipulating model objects
-  - import first **`from** **polls.models** **import** Choice, Question`
+  - import first `from polls.models import Choice, Question`
   - check tutorial examples. filter by id, property_startswith=”search term”. get(property=searchterm). queryset[0] can manipulate like array
-    - [Related Objs Documentation](https://docs.djangoproject.com/en/5.1/ref/models/relations/) can use relationship properties in filter, separate by double underscore (choice, question) `Choice**.**objects**.**filter(question__pub_date__year**=**current_year)`
-  - create `q **=** Question(question_text**=**"What's new?", pub_date**=**timezone**.**now())` and then q.save(). or use Question.objects.create()
-  - QuerySet documentation
-    - [QuerySet Documentation | Field Lookups](https://docs.djangoproject.com/en/5.2/ref/models/querysets/#field-lookups) - double underscore methods that can be chained onto a field to get more specific data (year of date) or comparisons (greater than, contains)
+    - [Related Objs Documentation](https://docs.djangoproject.com/en/5.1/ref/models/relations/) can use relationship properties in filter, separate by double underscore (choice, question) `Choice.objects.filter(question__pub_date__year=current_year)`
+  - create `q = Question(question_text="What's new?", pub_date=timezone.now())` and then q.save(). or use Question.objects.create()
+  - [QuerySet Documentation | Field Lookups](https://docs.djangoproject.com/en/5.2/ref/models/querysets/#field-lookups) - double underscore methods that can be chained onto a field to get more specific data (year of date) or comparisons (greater than, contains)
 
 ### Examining views using test tools
 
 ```
->>> from django.test.utils import setup_test_environment
->>> setup_test_environment()
->>> from django.test import Client
->>> # create an instance of the client for our use
->>> client = Client()
->>> response = client.get("/") # examine response for content, context, status code, etc.
+from django.test.utils import setup_test_environment
+setup_test_environment()
+from django.test import Client
+# create an instance of the client for our use
+client = Client()
+response = client.get("/") # examine response for content, context, status code, etc.
 ```
 
 - setup_test_environment installs a template renderer. can examine response context but uses existing db, not a test db. [Advanced Testing Topics](https://docs.djangoproject.com/en/5.1/topics/testing/advanced/#django.test.utils.setup_test_environment)
