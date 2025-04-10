@@ -46,6 +46,20 @@
   - QuerySet documentation
     - [QuerySet Documentation | Field Lookups](https://docs.djangoproject.com/en/5.2/ref/models/querysets/#field-lookups) - double underscore methods that can be chained onto a field to get more specific data (year of date) or comparisons (greater than, contains)
 
+### Examining views using test tools
+
+```
+>>> from django.test.utils import setup_test_environment
+>>> setup_test_environment()
+>>> from django.test import Client
+>>> # create an instance of the client for our use
+>>> client = Client()
+>>> response = client.get("/") # examine response for content, context, status code, etc.
+```
+
+- setup_test_environment installs a template renderer. can examine response context but uses existing db, not a test db. [Advanced Testing Topics](https://docs.djangoproject.com/en/5.1/topics/testing/advanced/#django.test.utils.setup_test_environment)
+- [Testing Tools and django.test.Client](https://docs.djangoproject.com/en/5.1/topics/testing/tools/#testing-tools)
+
 ## Admin User
 
 - `python manage.py createsuperuser`prompts to create login w email
@@ -66,3 +80,4 @@
   - place in app's `test.py` file
   - Django will automatically find test files that begin with `test`
   - test methods also should begin with `test`
+- Run tests for all INSTALLED_APPS with `python manage.py test` . Can also test an app with `python manage.py test polls`
