@@ -59,3 +59,10 @@
   - [Django Docs | Built in template helpers](https://docs.djangoproject.com/en/5.1/ref/templates/builtins/#std-templatetag-for)
     - `extends` from a base template
     - `include` a partial
+
+## Testing
+
+- Naming convetions
+  - place in app's `test.py` file
+  - Django will automatically find test files that begin with `test`
+  - test methods also should begin with `test`
