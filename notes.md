@@ -77,7 +77,8 @@
 ## Testing
 
 - Naming convetions
-  - place in app's `test.py` file
-  - Django will automatically find test files that begin with `test`
+  - Django will automatically find test files that begin with `test`. For ex. `polls/tests.py`
   - test methods also should begin with `test`
 - Run tests for all INSTALLED_APPS with `python manage.py test` . Can also test an app with `python manage.py test polls`
+- When using django.test.TestCase, each test is wrapped in a transaction and rolled back after the test finishes. So db is reset btwn tests
+  - [TestCase docs](https://docs.djangoproject.com/en/5.1/topics/testing/tools/#testcase)
