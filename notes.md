@@ -84,3 +84,10 @@ response = client.get("/") # examine response for content, context, status code,
 - Further reading
   - [Django's LiveServerTestCase for Selenium tests](https://docs.djangoproject.com/en/5.1/topics/testing/tools/#liveservertestcase)
   - [Coverage.py external library for checking test coverage](https://docs.djangoproject.com/en/5.1/topics/testing/advanced/#integration-with-coverage-py)
+
+## Static Files
+
+- [STATICFILES_FINDERS](https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-STATICFILES_FINDERS) in settings (not in standard setup settings)
+  - default is to look for `static/` directory in each INSTALLED_APPS folder
+  - use namespacing like templates file structure from pt3
+  - `{% static 'polls/style.css' %}` static template tag for use in files processed by django (like html templates) not static files themselves. This tag relies on STATIC_URL to generate path urls.
