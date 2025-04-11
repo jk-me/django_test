@@ -63,6 +63,8 @@ response = client.get("/") # examine response for content, context, status code,
 
 - `python manage.py createsuperuser` prompts to create login w email
 - [ModelAdmin.fieldsets](https://docs.djangoproject.com/en/5.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets) - control admin layout sections. other objects like `fields` can control layout order, build `inlines` forms for related objects, `list_display`, etc.
+- Overriding Django default templates
+  - Refer to [Django Github Admin Templates](https://github.com/django/django/tree/main/django/contrib/admin/templates) or use `python -c "import django; print(django.__path__)"` to find local files
 
 ## Pt 3 - Views and templates
 
