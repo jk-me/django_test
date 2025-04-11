@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Question
+from .models import  Choice, Question
 
 class QuestionAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -11,3 +11,4 @@ class QuestionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Question, QuestionAdmin)
+admin.site.register(Choice) # choice form adds a single choice and allows choosing existing/adding a new question to attach to
