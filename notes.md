@@ -62,6 +62,7 @@ response = client.get("/") # examine response for content, context, status code,
 ## Admin User
 
 - `python manage.py createsuperuser` prompts to create login w email
+- [ModelAdmin.fieldsets](https://docs.djangoproject.com/en/5.1/ref/contrib/admin/#django.contrib.admin.ModelAdmin.fieldsets) - control admin layout sections. other objects like `fields` can control layout order, etc.
 
 ## Pt 3 - Views and templates
 
