@@ -61,7 +61,7 @@ response = client.get("/") # examine response for content, context, status code,
 
 ## Admin User
 
-- `python manage.py createsuperuser`prompts to create login w email
+- `python manage.py createsuperuser` prompts to create login w email
 
 ## Pt 3 - Views and templates
 
