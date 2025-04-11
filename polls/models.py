@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from django.contrib import admin
 
 # Create your models here.
 # models build on subclasses of models import
@@ -16,6 +17,11 @@ class Question(models.Model):
     def __str__(self):
         return self.question_text
 
+    @admin.display(
+      boolean=True,
+      ordering="pub_date", #define a sorting order for this method
+      description="Published recently?",
+    )
     def was_published_recently(self):
       now = timezone.now()
       # pub date was in the last day (published after or at current time - 1 day)
